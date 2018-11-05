@@ -6,6 +6,10 @@ Clone Google Task Project using Flutter
 
 [Quang Truong](https://www.facebook.com/truongphamit)
 
+# inkedin
+
+[Quang Truong](https://www.linkedin.com/in/quang-truong-pham-860860142/)
+
 # Blog
 
 [truongphamit](https://truongphamit.github.io/)
