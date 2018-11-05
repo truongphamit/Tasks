@@ -1,8 +1,15 @@
-# tasks
+# Tasks
 
-Clone Google Task Project
+Clone Google Task Project using Flutter
 
-## Getting Started
+# Facebook
 
-For help getting started with Flutter, view our online
-[documentation](https://flutter.io/).
+[Quang Truong](https://www.facebook.com/truongphamit)
+
+# Blog
+
+[truongphamit](https://truongphamit.github.io/)
+
+## Some Screenshots
+
+
