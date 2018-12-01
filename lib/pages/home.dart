@@ -11,31 +11,60 @@ class HomePage extends StatefulWidget {
 class HomeState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: FloatingActionButton.extended(
-          onPressed: () {},
-          icon: Icon(Icons.add),
-          label: Text('Add a new task')),
-        bottomNavigationBar: BottomAppBar(
-          elevation: 16.0,
-        child: new Row(
-          mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            IconButton(
-              icon: Icon(Icons.menu),
-              onPressed: showMenu,
-            ),
-            IconButton(
-              icon: Icon(Icons.more_vert),
-              onPressed: showMore,
-            ),
-          ],
+    return Theme(
+        data: Theme.of(context).copyWith(
+          canvasColor: Colors.white,
         ),
-      ),
-    );
+        child: Scaffold(
+          backgroundColor: Colors.white,
+          floatingActionButtonLocation:
+              FloatingActionButtonLocation.centerDocked,
+          floatingActionButton: FloatingActionButton.extended(
+              onPressed: () {},
+              icon: Icon(Icons.add),
+              label: Text('Add a new task')),
+          bottomNavigationBar: BottomAppBar(
+            elevation: 16.0,
+            child: new Row(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                IconButton(
+                  icon: Icon(Icons.menu),
+                  onPressed: showMenu,
+                ),
+                IconButton(
+                  icon: Icon(Icons.more_vert),
+                  onPressed: showMore,
+                ),
+              ],
+            ),
+          ),
+          body: RefreshIndicator(
+              child: ListView(
+                children: <Widget>[
+                  Container(
+                    padding: EdgeInsets.only(
+                        top: 24.0, bottom: 24.0, right: 24.0, left: 24.0),
+                    child: Text(
+                      'My Tasks',
+                      style: TextStyle(color: Colors.black, fontSize: 28.0),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                  ListTile(
+                    leading: Icon(Icons.radio_button_unchecked),
+                    title: Text('Get budget approved by Gerg'),
+                  )
+                ],
+              ),
+              onRefresh: onRefresh),
+        ));
+  }
+
+  Future onRefresh() async {
+    await new Future.delayed(new Duration(seconds: 3));
+    return;
   }
 
   showMenu() {
